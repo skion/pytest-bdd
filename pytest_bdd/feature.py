@@ -215,10 +215,10 @@ class Feature(object):
                     raise FeatureError("Given steps must be the first in withing the Scenario",
                                        line_number, clean_line, filename)
 
-                if mode == types.WHEN and prev_mode not in (
-                        types.SCENARIO, types.SCENARIO_OUTLINE, types.GIVEN, types.WHEN):
-                    raise FeatureError("When steps must be the first or follow Given steps",
-                                       line_number, clean_line, filename)
+                # if mode == types.WHEN and prev_mode not in (
+                #         types.SCENARIO, types.SCENARIO_OUTLINE, types.GIVEN, types.WHEN):
+                #     raise FeatureError("When steps must be the first or follow Given steps",
+                #                        line_number, clean_line, filename)
 
                 if not self.background and mode == types.THEN and prev_mode not in types.STEP_TYPES:
                     raise FeatureError("Then steps must follow Given or When steps",

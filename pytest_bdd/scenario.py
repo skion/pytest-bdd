@@ -208,11 +208,11 @@ def _execute_scenario(feature, scenario, request, encoding, example=None):
                 raise
 
             try:
-                # Check the step types are called in the correct order
-                if step_func.step_type != step.type:
-                    raise exceptions.StepTypeError(
-                        'Wrong step type "{0}" while "{1}" is expected.'.format(step_func.step_type, step.type)
-                    )
+                # # Check the step types are called in the correct order
+                # if step_func.step_type != step.type:
+                #     raise exceptions.StepTypeError(
+                #         'Wrong step type "{0}" while "{1}" is expected.'.format(step_func.step_type, step.type)
+                #     )
 
                 # Check if the fixture that implements given step has not been yet used by another given step
                 if step.type == GIVEN:
